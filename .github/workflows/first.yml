@@ -6,4 +6,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: print hello world
-        run: echo "hello world"        
+        run: echo "hello world"   
+
+      - name: install java 
+        uses: actions/setup-java@v5
+        with:
+          distribution: 'temurin' # See 'Supported distributions' for available options
+          java-version: '17'
+
+      - name: check java version
+        run: java -version
